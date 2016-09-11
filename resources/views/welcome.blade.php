@@ -4,12 +4,20 @@
     <div class="container" id="gorditos">
         <br><br>
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-4 col-xs-4">
+                <img src="http://static.elmeme.me/static/uploads/images/2014/11/68621/68623_subitem_full.png" alt="" class="img-responsive center-block">
+            </div>
+            <div class="col-md-4 col-xs-4">
                 <img src="http://elmeme.me/static/uploads/images/2015/03/81079/81079_main_full.png" alt="" class="img-responsive center-block">
             </div>
+            <div class="col-md-4 col-xs-4">
+                <br>
+                <img class="img-responsive center-block" src="http://www.charbase.com/images/glyph/128520">
+            </div>
         </div>
-        <h1 class="text-center">Gordita Pishi Party</h1>
+        <h1 class="text-center">Gordita Party</h1>
         <br><br>
+        <h3 class="text-center">Que empiece la cuenta regresiva. Faltan:</h3>
         <h1 class="text-center">@{{contador}}</h1>
         <br><br>
         <img src="http://memeschistosos.net/wp-content/uploads/2015/10/memesdefelicitaciones7.jpg" alt="" class="img-responsive center-block">
