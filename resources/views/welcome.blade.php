@@ -21,6 +21,8 @@
         <h1 class="text-center">@{{contador}}</h1>
         <p class="text-center">* Se desbloqueará contenido especial exactamente cuando termine la cuenta regresiva</p>
         <br><br>
+        <button type="button" class="btn btn-primary center-block" v-on:click="desbloquear">Ver Contenido</button>
+        <br><br>
         <img src="http://memeschistosos.net/wp-content/uploads/2015/10/memesdefelicitaciones7.jpg" alt="" class="img-responsive center-block">
         <br><br>
     </div>
@@ -50,6 +52,11 @@
             timer.addEventListener('secondsUpdated', function (e) {
                 that.contador =  timer.getTimeValues().toString(['hours', 'minutes', 'seconds']);
             });
+        },
+        methods: {
+            desbloquear: function(){
+                swal("Todavía no es tu cumpleaños");
+            }
         }
     })
 </script>
