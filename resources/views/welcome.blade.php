@@ -19,6 +19,7 @@
         <br><br>
         <h3 class="text-center">Que empiece la cuenta regresiva. Faltan:</h3>
         <h1 class="text-center">@{{contador}}</h1>
+        <p class="text-center">* Se desbloqueará contenido especial exactamente cuando termine la cuenta regresiva</p>
         <br><br>
         <img src="http://memeschistosos.net/wp-content/uploads/2015/10/memesdefelicitaciones7.jpg" alt="" class="img-responsive center-block">
         <br><br>
