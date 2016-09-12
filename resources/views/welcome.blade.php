@@ -43,7 +43,7 @@
             var that = this;
 
             var date1 = new Date();
-            var date2 = new Date("09/12/2016");
+            var date2 = new Date("08/12/2016");
             var timeDiff = Math.abs(date2.getTime() - date1.getTime());
             var diffHours = timeDiff / (1000 * 3600 * 24) * 24;
             if (diffHours > 10) {
