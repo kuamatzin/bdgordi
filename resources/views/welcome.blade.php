@@ -17,13 +17,15 @@
         </div>
         <h1 class="text-center">Gordita Party</h1>
         <br><br>
-        <h3 class="text-center">Que empiece la cuenta regresiva. Faltan:</h3>
+        <h3 class="text-center" v-if="contador != '¡¡¡Felicidades mi Gordita!!!'">Que empiece la cuenta regresiva. Faltan:</h3>
         <h1 class="text-center">@{{contador}}</h1>
-        <p class="text-center">* Se desbloqueará contenido especial exactamente cuando termine la cuenta regresiva</p>
+        <img src="https://media.giphy.com/media/YTbZzCkRQCEJa/giphy.gif" alt="" class="img-responsive center-block" v-if="contador == '¡¡¡Felicidades mi Gordita!!!'">
+        <p class="text-center" v-if="contador != '¡¡¡Felicidades mi Gordita!!!'">* Se desbloqueará contenido especial exactamente cuando termine la cuenta regresiva</p>
         <br><br>
-        <button type="button" class="btn btn-primary center-block" v-on:click="desbloquear">Ver Contenido</button>
+        <button type="button" class="btn btn-primary center-block btn-lg" v-on:click="desbloquear">Ver Contenido</button>
         <br><br>
-        <img src="http://memeschistosos.net/wp-content/uploads/2015/10/memesdefelicitaciones7.jpg" alt="" class="img-responsive center-block">
+        <img src="http://memeschistosos.net/wp-content/uploads/2015/10/memesdefelicitaciones7.jpg" alt="" class="img-responsive center-block" v-if="contador != '¡¡¡Felicidades mi Gordita!!!'">
+        <img src="https://media.giphy.com/media/gw3JY2uqiaXKaQXS/giphy.gif" alt="" class="img-responsive center-block" v-if="contador == '¡¡¡Felicidades mi Gordita!!!'">
         <br><br>
     </div>
 @endsection
@@ -44,18 +46,28 @@
             var date2 = new Date("09/12/2016");
             var timeDiff = Math.abs(date2.getTime() - date1.getTime());
             var diffHours = timeDiff / (1000 * 3600 * 24) * 24;
-            var hours = Math.floor(diffHours);
-            var minutesDecimal = (diffHours % 1) * 60;
-            var minutes = Math.floor(minutesDecimal);
-            var seconds = Math.floor((minutesDecimal % 1) * 60);
-            timer.start({countdown: true, startValues: {hours: hours, minutes: minutes, seconds: seconds}});
-            timer.addEventListener('secondsUpdated', function (e) {
-                that.contador =  timer.getTimeValues().toString(['hours', 'minutes', 'seconds']);
-            });
+            if (diffHours > 10) {
+                that.contador = "¡¡¡Felicidades mi Gordita!!!"
+            }
+            else{
+                var hours = Math.floor(diffHours);
+                var minutesDecimal = (diffHours % 1) * 60;
+                var minutes = Math.floor(minutesDecimal);
+                var seconds = Math.floor((minutesDecimal % 1) * 60);
+                timer.start({countdown: true, startValues: {hours: hours, minutes: minutes, seconds: seconds}});
+                timer.addEventListener('secondsUpdated', function (e) {
+                    that.contador =  timer.getTimeValues().toString(['hours', 'minutes', 'seconds']);
+                });
+            }
         },
         methods: {
             desbloquear: function(){
-                swal("Todavía no es tu cumpleaños");
+                if (this.contador == '¡¡¡Felicidades mi Gordita!!!') {
+                    window.location = 'video'
+                }
+                else {
+                    swal('Todavía no es tu cumpleaños')
+                }
             }
         }
     })
