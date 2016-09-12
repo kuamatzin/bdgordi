@@ -40,9 +40,8 @@
                                 <br>
                                 <p style="font-weight: bold; font-size: 17px">Existen personas que son como los colores primarios y que nos regalan las bases para nuestras mejores tonalidades.</p>
                                 <br>
-                                <p style="font-weight: bold; font-size: 17px">Existen personas  como tú y yo.</p>
+                                <p style="font-weight: bold; font-size: 17px">Existen personas... como tú.</p>
                                 <br>
-                                <p style="font-weight: bold; font-size: 17px">Existen personas  como nosotros</p>
                             </div>
                         </div>
                     </div>
